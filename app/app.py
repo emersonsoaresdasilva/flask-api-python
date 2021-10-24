@@ -37,5 +37,48 @@ def export_csv():
     except Exception:
         return jsonify({'status': 'error', 'message': 'verifique os dados informados e tente novamente!'})
 
+@app.route('/product/<id>', methods=['GET'])
+def search_product(id):
+    for product in db:
+        if product['id'] == id:
+            return product
+    return jsonify({'status': 'error', 'message': 'o produto nao foi localizado!'})
+
+@app.route('/create-product', methods=['POST'])
+def create_product():
+    try:
+        data = request.json
+        if data['id'] in [produto['id'] for produto in db]:
+            return jsonify({'status': 'error', 'message': 'produto já existente!'})
+        else:
+            db.append(data)
+            return jsonify({'status': 'ok', 'message': 'produto criado com sucesso.'})
+    except Exception:
+        return jsonify({'status': 'error', 'message': 'verifique os dados informados e tente novamente!'})
+
+@app.route('/update-product', methods=['PUT'])
+def update_product():
+    try:
+        data = request.json
+        for product in db:
+            if product['id'] == data['id']:
+                product['name'] = data['name']
+                product['price'] = data['price']
+                product['quantity'] = data['quantity']
+                return jsonify({'status': 'ok', 'message': 'dados alterados com sucesso.'})
+        return jsonify({'status': 'error', 'message': 'nenhum produto encontrado!'})
+    except Exception:
+        return jsonify({'status': 'error', 'message': 'verifique os dados informados e tente novamente!'})
+
+@app.route('/delete-product/<id>', methods=['DELETE'])
+def delete_product(id):
+    try:
+        for product in db:
+            if product['id'] == id:
+                db.remove(product)
+                return jsonify({'status': 'ok', 'message': 'produto removido com sucesso.'})
+    except Exception:
+        return jsonify({'status': 'error', 'message': 'o produto nao foi localizado!'})
+
 if __name__ == '__main__':
     app.run(debug=True)
