@@ -16,7 +16,7 @@ def get_all():
 @app.route('/import-csv', methods=['GET'])
 def import_csv():
     try:
-        with open('data.csv', 'r') as csv_file:
+        with open('app/data.csv', 'r') as csv_file:
             csv_reader = csv.DictReader(csv_file, delimiter=';')
             data = list(csv_reader)
             for produto in data:
