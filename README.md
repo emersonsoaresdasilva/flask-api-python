@@ -12,7 +12,7 @@
 ```json
 {   
     "id": "1",
-    "name": "Product Test",
+    "name": "Product test",
     "price": "100.00",
     "quantity": "10"
 }
@@ -20,6 +20,7 @@
 - [x] <strong>GET</strong>/get-all/:                A rota retorna todos os produtos cadastrados.
 - [x] <strong>GET</strong>/import-csv/:             A rota importa dados de CSV.
 - [x] <strong>GET</strong>/export-csv/:             A rota exporta dados em CSV.
+- [x] <strong>GET</strong>/product/:id::            A rota retorna um produto.
 - [x] <strong>POST</strong>/create-product:         A rota cria um produto.
 - [x] <strong>PUT</strong>/update-product:          A rota atualiza um produto.
 - [x] <strong>DELETE</strong>/delete-product/:id::  A rota deleta um produto.
