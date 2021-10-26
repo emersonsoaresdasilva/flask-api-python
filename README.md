@@ -7,11 +7,13 @@
 ### Ferramentas utilizadas:
 - Python. 🐍
 - Flask. 🌶️
+- Postman. 👨‍🚀
+- SQLite3. 🪶
 
 ### Descrição da API:
 ```json
 {   
-    "id": "1",
+    "id": 1,
     "name": "Product test",
     "price": "100.00",
     "quantity": "10"
@@ -24,6 +26,7 @@
 - [x] <strong>POST</strong>/create-product:         A rota cria um produto.
 - [x] <strong>PUT</strong>/update-product:          A rota atualiza um produto.
 - [x] <strong>DELETE</strong>/delete-product/:id::  A rota deleta um produto.
+- [x] <strong>POST</strong>/reset-products:         A rota deleta a tabela de produtos.
 
 ### Executar servidor:
 <code>python -m venv venv</code> ⤵
@@ -31,6 +34,8 @@
 <code>venv\Scripts\activate</code>
 
 <code>pip install -r requirements.txt</code>
+
+<code>python .\app\sql.py</code>
 
 <code>python .\app\app.py</code> ✔
 
