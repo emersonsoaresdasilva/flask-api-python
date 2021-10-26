@@ -4,6 +4,11 @@
 
 É classificado como um microframework porque não requer ferramentas ou bibliotecas particulares, mantendo um núcleo simples, porém, extensível.
 
+### Funcionalidades:
+- CRUD de produtos ⤵
+- Busca de produtos, pelo id
+- Relatório de produtos (CSV) ✔
+
 ### Ferramentas utilizadas:
 - Python. 🐍
 - Flask. 🌶️
@@ -14,8 +19,8 @@
 ```json
 {   
     "id": 1,
-    "name": "Product test",
-    "price": "100.00",
+    "name": "Camiseta do Brasil",
+    "price": "350.00",
     "quantity": "10"
 }
 ```
@@ -24,7 +29,7 @@
 - [x] <strong>GET</strong>/export-csv/:             A rota exporta dados em CSV.
 - [x] <strong>GET</strong>/product/:id::            A rota retorna um produto.
 - [x] <strong>POST</strong>/create-product:         A rota cria um produto.
-- [x] <strong>PUT</strong>/update-product:          A rota atualiza um produto.
+- [x] <strong>PUT</strong>/update-product/:id::     A rota atualiza um produto.
 - [x] <strong>DELETE</strong>/delete-product/:id::  A rota deleta um produto.
 - [x] <strong>POST</strong>/reset-products:         A rota deleta a tabela de produtos.
 
